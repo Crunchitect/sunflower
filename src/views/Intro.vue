@@ -29,13 +29,20 @@
           targets: ".h2",
           translateY: -1000,
           duration: 1000
+        }).add({
+          targets: ".slogan",
+          fontSize: "3.5rem",
+          opacity: 1,
+          top: "95vw",
+          easing: 'easeInOutSine',
+          duration: 500
         });
     });
 </script>
 
 <template>
     <div class="full">
-      Loading....
+      Loading Models....
     </div>
     <div class="intro side" >
       <Handwriting class="handwriting" color="url(#linear-grad)" />
@@ -43,18 +50,35 @@
     <div class="intro1 side">
       <Handwriting class="handwriting h2" color="white" />
     </div>
-    <Spline url="https://prod.spline.design/o3eywZC60UX0rmyq/scene.splinecode" @done="start" />
+    <Spline url="https://prod.spline.design/o3eywZC60UX0rmyq/scene.splinecode" @done="start" class="spline" />
+    <p class="slogan">น้ำมันนวดธรรมชาติ</p>
 </template>
 
 <style scoped>
+  .slogan {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    z-index: 69420;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    text-align: center;
+  }
+
+
   .full {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100vw;
+    height: 100vh;
     background-color: white;
     z-index: 69420;
+    font-size: 7rem;
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center;
   }
   .side {
     display: grid;
@@ -79,5 +103,14 @@
     height: auto;
     /* transform: scale(1.8); */
     margin: 10vw;
+  }
+
+  .spline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    /* margin-top: 20vh; */
   }
 </style>

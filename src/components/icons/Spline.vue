@@ -21,8 +21,15 @@
     });
 
     onMounted(async () =>{
-        const app = new Application(canvas.value);
-        await app.load(state.spline.scene)
+        let app = new Application(canvas.value);
+        await app.load(state.spline.scene).then(() => {
+            let bottle = app.findObjectByName('Group');
+            bottle.position.y += 40;
+            document.addEventListener('scroll', () => {
+                bottle.rotation.y += 0.05;
+            });
+            setInterval(() => bottle.rotation.y += 0.01, 75);
+        });
         state.spline.app = app;
         state.spline.isLoaded = true;
         console.log('done')
