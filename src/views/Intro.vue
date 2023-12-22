@@ -33,7 +33,7 @@
           targets: ".slogan",
           fontSize: "3.5rem",
           opacity: 1,
-          top: "95vw",
+          top: "80vh",
           easing: 'easeInOutSine',
           duration: 500
         });
